@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   getCorreo,
+  getCorreos,
   createCorreo,
   updateCorreo,
   deleteCorreo,
@@ -10,9 +11,10 @@ const router = Router();
 // router.get("/", (req, res) => {
 //   res.json({"titulo": "hola"});
 // });
-router.get("/correo", getCorreo);
+router.get("/correo", getCorreos);
+router.get("/correo/:id", getCorreo);
 router.post("/correo", createCorreo);
-router.put("/correo", updateCorreo);
-router.delete("/correo", deleteCorreo);
+router.patch("/correo/:id", updateCorreo);
+router.delete("/correo/:id", deleteCorreo);
 
 export default router;
